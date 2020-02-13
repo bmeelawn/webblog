@@ -1,1 +1,268 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 100%;
+  background-color: #f8f9fa;
+}
+
+.max-width {
+  width: 1300px;
+  max-width: 94%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.error {
+  color: red !important;
+}
+
+.success {
+  color: green !important;
+}
+
+.aspect-ratio {
+  width: 100%;
+  position: relative;
+  padding-bottom: 40%;
+}
+
+.aspect-ratio.aspect-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+ul, li {
+  list-style: none;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+.btn {
+  background-color: #000;
+  color: #fff;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.gutterY {
+  padding-top: 30px;
+}
+
+.gutterY.bottom-too {
+  padding-bottom: 30px;
+}
+
+.w-400 {
+  font-weight: 400;
+}
+
+.w-600 {
+  font-weight: 600;
+}
+
+.w-700 {
+  font-weight: 900;
+}
+
+.w-800 {
+  font-weight: 800;
+}
+
+.title {
+  font-size: 14px;
+}
+
+.title.big {
+  font-size: 18px;
+}
+
+.title.small {
+  font-size: 14px;
+}
+
+.title.x-small {
+  font-size: 12px;
+}
+
+.text-color.text-default {
+  color: #000;
+}
+
+.text-color.text-dim {
+  color: rgba(0, 0, 0, 0.54) !important;
+}
+
+.para {
+  line-height: 20px;
+}
+
+.para.p-big {
+  font-size: 18px;
+}
+
+.para.p-small {
+  font-size: 14px;
+}
+
+.para.p-x-small {
+  font-size: 12px;
+}
+
+/* navigation bar */
+header {
+  -webkit-box-shadow: 0 3px 7px #eee;
+          box-shadow: 0 3px 7px #eee;
+}
+
+#navbarNav ul, #navbarNav li {
+  padding-right: 20px;
+}
+
+#navbarNav ul a, #navbarNav li a {
+  color: #000;
+}
+
+#navbarNav ul:last-child, #navbarNav li:last-child {
+  padding-right: 0;
+}
+
+#navbarNav ul .search-box, #navbarNav li .search-box {
+  width: 300px;
+}
+
+#navbarNav ul .search-box .input-holder, #navbarNav li .search-box .input-holder {
+  position: relative;
+  width: 300px;
+  height: 35px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+}
+
+#navbarNav ul .search-box .input-holder input, #navbarNav li .search-box .input-holder input {
+  height: 100%;
+  width: 300px;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0 0 0 10px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  width: calc(300px - 30px);
+}
+
+#navbarNav ul .search-box .input-holder button, #navbarNav li .search-box .input-holder button {
+  border: none;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  position: absolute;
+  width: 30px;
+  top: 2px;
+  right: 0px;
+  cursor: pointer;
+}
+
+/* navigation bar end */
+/* posts */
+.posts {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.posts .row {
+  padding-left: 0;
+}
+
+.posts .blog-card {
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.posts .blog-card .aspect-ratio {
+  padding-bottom: 60%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.posts .blog-card .blog-body {
+  padding: 10px 5px 0px 5px;
+}
+
+.posts .blog-card .blog-body .para {
+  line-height: 20px;
+}
+
+.posts .blog-card .blog-body .user-details a:hover {
+  text-decoration: underline;
+}
+
+/* posts end */
+/* box */
+.box {
+  width: 100%;
+  max-width: 800px;
+  margin: 50px auto;
+  text-align: center;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.box .row {
+  padding: 20px 0;
+}
+
+.box input {
+  display: block;
+  width: 300px;
+  margin: 20px auto;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  padding: 0 0 0 10px;
+  outline: none;
+  height: 40px;
+}
+
+.box a {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.box a:hover {
+  color: #000 !important;
+  -webkit-transition: all 0.9s;
+  transition: all 0.9s;
+  text-decoration: underline;
+}
+
+.box button {
+  outline: none;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+/*# sourceMappingURL=main.css.map */

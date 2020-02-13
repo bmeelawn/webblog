@@ -3,7 +3,7 @@
 include 'db.inc.php';
 
 
-$message = "";
+$message= "";
 
 if (isset($_POST['login-submit'])) {
 
@@ -17,30 +17,28 @@ if (isset($_POST['login-submit'])) {
     $query = "SELECT * FROM users where username = '$login_username' OR user_email = '$login_username'";
     $all_users_query = mysqli_query($conn, $query);
 
-    while($row=mysqli_fetch_assoc($all_users_query)) {
+    $row=mysqli_fetch_assoc($all_users_query);
 
-        if (count($row)<0) {
-
-            $message ="Password or Email Incorrect.";
-
-        }
+    if ($row){
 
         $password = $row['user_password'];
 
-    }
-
         if ($password !== $login_password) {
 
-            $message = "Password incorrect";
+           $message = "Password incorrect.";
 
         } else {
 
-            $message = "You are successully login.";
+            $message = "You are successfully login.";
 
         }
 
-         header("location: ../login.php");
+       
+    } else {
 
+        $message = "Password or Email Incorrect.";
+
+    }
 
 }
 

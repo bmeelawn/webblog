@@ -2,6 +2,7 @@
 
 include 'db.inc.php';
 
+
 $message = "";
 
 if (isset($_POST['login-submit'])) {
@@ -26,6 +27,8 @@ if (isset($_POST['login-submit'])) {
 
         $password = $row['user_password'];
 
+    }
+
         if ($password !== $login_password) {
 
             $message = "Password incorrect";
@@ -35,8 +38,8 @@ if (isset($_POST['login-submit'])) {
             $message = "You are successully login.";
 
         }
-        
-    }
+
+         header("location: ../login.php");
 
 
 }

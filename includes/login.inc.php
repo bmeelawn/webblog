@@ -21,11 +21,12 @@ if (isset($_POST['login-submit'])) {
         $all_users_query = mysqli_query($conn, $query);
 
         if ($row = mysqli_fetch_assoc($all_users_query)) {
-            if ($login_password !== $row['user_password']) {
-                $message = "<p class='error'>Password incorrect!</p>";
+            $pwdCheck = password_verify($login_password, $row['user_password']);
+            if (!$pwdCheck) {
+                $message = "<p class='error'>incorrect password</p>";
             } else {
-                // redirect to the profile page (code)
-                $message = "<p class='success'>Login success</p>";
+                header("Location: profile.php?login=success");
+                exit();
             }
         } else {
             $message = "<p class='error'>Password or Email Incorrect!</p>";

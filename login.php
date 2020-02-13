@@ -1,6 +1,7 @@
 <?php
 include 'includes/header.inc.php';
 include 'includes/navbar.inc.php';
+include 'includes/db.inc.php';
 ?>
 <main class="box login-form max-width gutterY">
     <section class="row">

@@ -3,43 +3,32 @@
 include 'db.inc.php';
 
 
-$message= "";
+$message = "";
 
 if (isset($_POST['login-submit'])) {
 
     $login_username = $_POST['uid'];
     $login_password = $_POST['pwd'];
 
-
     $login_username = mysqli_real_escape_string($conn, $login_username);
     $login_password = mysqli_real_escape_string($conn, $login_password);
 
-    $query = "SELECT * FROM users where username = '$login_username' OR user_email = '$login_username'";
-    $all_users_query = mysqli_query($conn, $query);
-
-    $row=mysqli_fetch_assoc($all_users_query);
-
-    if ($row){
-
-        $password = $row['user_password'];
-
-        if ($password !== $login_password) {
-
-           $message = "Password incorrect.";
-
-        } else {
-
-            $message = "You are successfully login.";
-
-        }
-
-       
+    // check if username is empty or not
+    if (empty($login_username) || empty($login_password)) {
+        $message = "<p class='error'>Fill in all required!</p>";
     } else {
+        $query = "SELECT * FROM users where username = '$login_username' OR user_email = '$login_username'";
+        $all_users_query = mysqli_query($conn, $query);
 
-        $message = "Password or Email Incorrect.";
-
+        if ($row = mysqli_fetch_assoc($all_users_query)) {
+            if ($login_password !== $row['user_password']) {
+                $message = "<p class='error'>Password incorrect!</p>";
+            } else {
+                // redirect to the profile page (code)
+                $message = "<p class='success'>Login success</p>";
+            }
+        } else {
+            $message = "<p class='error'>Password or Email Incorrect!</p>";
+        }
     }
-
 }
-
-?>

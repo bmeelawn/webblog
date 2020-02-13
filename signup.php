@@ -1,12 +1,14 @@
 <?php
 include 'includes/header.inc.php';
 include 'includes/navbar.inc.php';
+include 'includes/signup.inc.php';
 ?>
 <main class="box login-form max-width gutterY">
     <section class="row">
         <div class="col-sm-12 col-md-12">
             <h1 class="title big w-600">Signup</h1>
-            <form action="includes/signup.inc.php" method="post">
+            <?php echo $message ?>
+            <form action="" method="post">
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
                         <input type="text" name="username" placeholder="Username">

@@ -7,7 +7,12 @@ include 'includes/signup.inc.php';
     <section class="row">
         <div class="col-sm-12 col-md-12">
             <h1 class="title big w-600">Signup</h1>
-            <?php echo $message ?>
+
+            <?php if (isset($_POST['signup-submit'])) {
+                    echo $message;
+                } 
+            ?>
+
             <form action="" method="post">
                 <div class="row">
                     <div class="col-md-6 col-sm-12">

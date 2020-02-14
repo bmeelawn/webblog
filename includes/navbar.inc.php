@@ -1,8 +1,8 @@
-<?php 
+<?php
 
 include "db.inc.php";
 session_start();
-?> 
+?>
 
 <header class="navbar-expand-md navbar-light bg-light" style="background: #fff !important">
     <div class="max-width">
@@ -19,19 +19,36 @@ session_start();
                     <li class="nav-item">
                         <a class="nav-link" href="">About us</a>
                     </li>
-                
+
+
                     <!-- Remove login and signup nav for login user -->
-                    <?php if (!$_SESSION['username']) { ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.php">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="signup.php">Signup</a>
-                    </li>
+                    <?php if (!isset($_SESSION['userid'])) { ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.php">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="signup.php">Signup</a>
+                        </li>
                     <?php } else { ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="includes/logout.inc.php?logout=<?=$_SESSION['username']?>">logout</a>
-                    </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <?= $_SESSION['username'] ?>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item text-capitalize" href="profile.php?username=<?= $_SESSION['username'] ?>"><?= $_SESSION['firstname'] . ' ' . $_SESSION['lastname'] ?></a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Settings</a>
+                                <a class="dropdown-item" href="includes/logout.inc.php">Logout</a>
+                            </div>
+                            <!-- dropdown menu js -->
+                            <script>
+                                let dropdown = document.querySelector('.dropdown');
+                                let dropdownMenu = document.querySelector('.dropdown-menu');
+                                dropdown.onclick = function() {
+                                    dropdownMenu.classList.toggle('show');
+                                }
+                            </script>
+                        </li>
                     <?php } ?>
                     <form action="" method="post" class="search-box form-inline my-2 my-lg-0">
                         <div class="input-holder">

@@ -1,6 +1,13 @@
 <?php
 include 'includes/header.inc.php';
 include 'includes/navbar.inc.php';
+
+if (isset($_GET['login'])) {
+    if(isset($_SESSION['username'])){
+        $username = $_SESSION['username'];
+        $user_email = $_SESSION['user_email'];
+    }
+}
 ?>
 
 <main class="posts max-width gutterY">
@@ -10,10 +17,10 @@ include 'includes/navbar.inc.php';
                 <div class="blog-body row">
                     <div class="col-md-9 col-sm-12">
                         <h1 class="title big w-600">
-                            John smith
+                            <?=$username?>
                         </h1>
                         <p class="para p-x-small w-400 text-color text-dim">
-                            @johnsmith
+                            <?=$user_email?>
                         </p>
                         <a href="#" class="title small w-400 text-color text-default" style="border: 1px solid #000; padding: 1px 10px; border-radius: 5px">Edit profile</a>
                     </div>

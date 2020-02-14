@@ -1,12 +1,9 @@
 <?php
 include 'includes/header.inc.php';
 include 'includes/navbar.inc.php';
-
-if (isset($_GET['login'])) {
-    if(isset($_SESSION['username'])){
-        $username = $_SESSION['username'];
-        $user_email = $_SESSION['user_email'];
-    }
+if (!isset($_SESSION['userid'])) {
+    header("Location: login.php?msg=loginfirst");
+    exit();
 }
 ?>
 
@@ -16,11 +13,11 @@ if (isset($_GET['login'])) {
             <div class="blog-card">
                 <div class="blog-body row">
                     <div class="col-md-9 col-sm-12">
-                        <h1 class="title big w-600">
-                            <?=$username?>
+                        <h1 class="title big w-600 text-capitalize">
+                            <?= $_SESSION['firstname'] . ' ' . $_SESSION['lastname'] ?>
                         </h1>
                         <p class="para p-x-small w-400 text-color text-dim">
-                            <?=$user_email?>
+                            @<?= $_SESSION['username'] ?>
                         </p>
                         <a href="#" class="title small w-400 text-color text-default" style="border: 1px solid #000; padding: 1px 10px; border-radius: 5px">Edit profile</a>
                     </div>

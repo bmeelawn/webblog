@@ -28,6 +28,14 @@ body {
     color: green !important;
 }
 
+.text-upper {
+    text-transform: uppercase;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
 .aspect-ratio {
     width: 100%;
     position: relative;

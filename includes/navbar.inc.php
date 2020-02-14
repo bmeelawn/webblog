@@ -1,3 +1,9 @@
+<?php 
+
+include "db.inc.php";
+session_start();
+?> 
+
 <header class="navbar-expand-md navbar-light bg-light" style="background: #fff !important">
     <div class="max-width">
         <nav class="navbar navbar-default">
@@ -13,12 +19,20 @@
                     <li class="nav-item">
                         <a class="nav-link" href="">About us</a>
                     </li>
+                
+                    <!-- Remove login and signup nav for login user -->
+                    <?php if (!$_SESSION['username']) { ?>
                     <li class="nav-item">
                         <a class="nav-link" href="login.php">Login</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="signup.php">Signup</a>
                     </li>
+                    <?php } else { ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="includes/logout.inc.php?logout=<?=$_SESSION['username']?>">logout</a>
+                    </li>
+                    <?php } ?>
                     <form action="" method="post" class="search-box form-inline my-2 my-lg-0">
                         <div class="input-holder">
                             <input type="text" name="search" placeholder="Search">

@@ -2,6 +2,11 @@
 include 'includes/header.inc.php';
 include 'includes/navbar.inc.php';
 include 'includes/signup.inc.php';
+
+if (isset($_SESSION['userid'])) {
+    header("location: index.php");
+}
+
 ?>
 <main class="box login-form max-width gutterY">
     <section class="row">

@@ -16,15 +16,19 @@ if (isset($_POST['login-submit'])) {
         $all_users_query = mysqli_query($conn, $query);
 
         if ($row = mysqli_fetch_assoc($all_users_query)) {
-            $username= $row['username'];
+            $username = $row['username'];
             $user_email = $row['user_email'];
             $pwdCheck = password_verify($login_password, $row['user_password']);
             if (!$pwdCheck) {
                 $message = "<p class='error'>Incorrect password.</p>";
             } else {
                 // Storing Session Values
-                $_SESSION['username'] = $username;
-                $_SESSION['user_email'] = $user_email;
+                session_start();
+                $_SESSION['userid'] = $row['user_id'];
+                $_SESSION['username'] = $row['username'];
+                $_SESSION['email'] = $row['user_email'];
+                $_SESSION['firstname'] = $row['user_firstname'];
+                $_SESSION['lastname'] = $row['user_lastname'];
                 header("Location: profile.php?login=success");
                 exit();
             }

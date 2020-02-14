@@ -1,7 +1,4 @@
 <?php
-include 'db.inc.php';
-
-$message = "";
 
 if (isset($_POST['signup-submit'])) {
 

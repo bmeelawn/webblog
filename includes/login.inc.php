@@ -1,10 +1,5 @@
 <?php
 
-include 'db.inc.php';
-
-
-$message = "";
-
 if (isset($_POST['login-submit'])) {
 
     $login_username = $_POST['uid'];
@@ -21,10 +16,15 @@ if (isset($_POST['login-submit'])) {
         $all_users_query = mysqli_query($conn, $query);
 
         if ($row = mysqli_fetch_assoc($all_users_query)) {
+            $username= $row['username'];
+            $user_email = $row['user_email'];
             $pwdCheck = password_verify($login_password, $row['user_password']);
             if (!$pwdCheck) {
-                $message = "<p class='error'>incorrect password</p>";
+                $message = "<p class='error'>Incorrect password.</p>";
             } else {
+                // Storing Session Values
+                $_SESSION['username'] = $username;
+                $_SESSION['user_email'] = $user_email;
                 header("Location: profile.php?login=success");
                 exit();
             }

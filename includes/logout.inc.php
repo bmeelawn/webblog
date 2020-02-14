@@ -1,12 +1,8 @@
 <?php
 session_start();
 
- if (isset($_GET['logout'])) {
-    $_SESSION['username'] = null;
-    $_SESSION['user_email'] = null;
+session_unset();
+session_destroy();
 
-    header("location: ../index.php");
- }
-
-
-?>
+header("Location: ../index.php?logout=success");
+exit();

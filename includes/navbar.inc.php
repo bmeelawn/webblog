@@ -44,7 +44,7 @@ session_start();
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item text-capitalize" href="profile.php?username=<?= $_SESSION['username'] ?>"><?= $_SESSION['firstname'] . ' ' . $_SESSION['lastname'] ?></a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Settings</a>
+                                <a class="dropdown-item" href="settings.php">Settings</a>
                                 <a class="dropdown-item" href="includes/logout.inc.php">Logout</a>
                             </div>
                             <!-- dropdown menu js -->

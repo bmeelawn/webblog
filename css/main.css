@@ -19,6 +19,11 @@ body {
   margin-right: auto;
 }
 
+h1, h2, h3, h4, h5 {
+  padding: 0;
+  margin: 0;
+}
+
 .error {
   color: red !important;
 }
@@ -219,6 +224,16 @@ header {
 
 .posts .blog-card .blog-body {
   padding: 10px 5px 0px 5px;
+}
+
+.posts .blog-card .blog-body .paragraph {
+  font-size: 12px;
+  padding: 10px 0;
+}
+
+.posts .blog-card .blog-body .paragraph p {
+  line-height: 20px;
+  margin: 0;
 }
 
 .posts .blog-card .blog-body .para {

@@ -19,6 +19,10 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+h1,h2,h3,h4,h5 {
+    padding: 0;
+    margin: 0;
+}
 
 .error {
     color: red !important;
@@ -217,6 +221,14 @@ header {
         
         .blog-body {
             padding: 10px 5px 0px 5px;
+            .paragraph {
+                font-size: 12px;
+                padding: 10px 0;
+                p {
+                    line-height: 20px;
+                    margin: 0;
+                }
+            }
             .para {
                 line-height: 20px;
                 

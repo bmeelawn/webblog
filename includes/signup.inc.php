@@ -33,8 +33,7 @@ if (isset($_POST['signup-submit'])) {
         } else {
             $pwdHash = password_hash($pwdRepeat, PASSWORD_DEFAULT);
             $profile_image = "{$username}default.jpg";
-            $date = date('y-m-d');
-            $sql = "INSERT INTO users(username,user_email,user_firstname,user_lastname,user_password,user_profile_image,join_at) VALUES ('$username','$email','$firstname','$lastname','$pwdHash','$profile_image',$date)";
+            $sql = "INSERT INTO users(username,user_email,user_firstname,user_lastname,user_password,user_profile_image,join_at) VALUES ('$username','$email','$firstname','$lastname','$pwdHash','$profile_image',now())";
             $res = mysqli_query($conn, $sql);
             if (!$res) {
                 $message = "<p class='error'>Something went wrong while siging up please try again later</p>";

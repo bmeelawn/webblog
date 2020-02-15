@@ -280,4 +280,13 @@ header {
   width: 100px;
   height: 100px;
 }
+
+input {
+  width: 400px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  padding: 0 0 0 10px;
+  outline: none;
+  height: 40px;
+}
 /*# sourceMappingURL=main.css.map */

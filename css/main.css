@@ -73,6 +73,10 @@ a:hover {
   padding-right: 30px;
 }
 
+.btn:hover {
+  color: #fff;
+}
+
 .gutterY {
   padding-top: 30px;
 }
@@ -143,23 +147,7 @@ header {
           box-shadow: 0 3px 7px #eee;
 }
 
-#navbarNav ul, #navbarNav li {
-  padding-right: 20px;
-}
-
-#navbarNav ul a, #navbarNav li a {
-  color: #000;
-}
-
-#navbarNav ul:last-child, #navbarNav li:last-child {
-  padding-right: 0;
-}
-
-#navbarNav ul .search-box, #navbarNav li .search-box {
-  width: 300px;
-}
-
-#navbarNav ul .search-box .input-holder, #navbarNav li .search-box .input-holder {
+.search-box .input-holder {
   position: relative;
   width: 300px;
   height: 35px;
@@ -167,7 +155,7 @@ header {
   border-radius: 3px;
 }
 
-#navbarNav ul .search-box .input-holder input, #navbarNav li .search-box .input-holder input {
+.search-box .input-holder input {
   height: 100%;
   width: 300px;
   border: none;
@@ -179,7 +167,7 @@ header {
   width: calc(300px - 30px);
 }
 
-#navbarNav ul .search-box .input-holder button, #navbarNav li .search-box .input-holder button {
+.search-box .input-holder button {
   border: none;
   outline: none;
   -webkit-box-shadow: none;
@@ -189,6 +177,18 @@ header {
   top: 2px;
   right: 0px;
   cursor: pointer;
+}
+
+#navbarNav ul, #navbarNav li {
+  padding-right: 20px;
+}
+
+#navbarNav ul a, #navbarNav li a {
+  color: #000;
+}
+
+#navbarNav ul:last-child, #navbarNav li:last-child {
+  padding-right: 0;
 }
 
 /* navigation bar end */

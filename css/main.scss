@@ -70,6 +70,9 @@ a {
     color: #fff;
     padding-left:30px;
     padding-right: 30px;
+    &:hover {
+        color: #fff;
+    }
 }
 
 .gutterY {
@@ -142,6 +145,37 @@ a {
 header {
     box-shadow: 0 3px 7px #eee;
 }
+.search-box {
+    .input-holder {
+        position: relative;
+        width: 300px;
+        height: 35px;
+        border: 1px solid #dddddd;
+        border-radius: 3px;
+        input {
+            height: 100%;
+            width: 300px;
+            border: none;
+            outline: none;
+            margin: 0;
+            padding: 0 0 0 10px;
+            box-shadow: none;
+            width: calc(300px - 30px);
+        }
+
+        button {
+            border: none;
+            outline: none;
+            box-shadow: none;
+            position: absolute;
+            width: 30px;
+            top: 2px;
+            right: 0px;
+            cursor: pointer;
+        }
+    }
+}
+
 #navbarNav {
     ul,li {
         padding-right: 20px;
@@ -154,38 +188,7 @@ header {
             padding-right: 0;
         }
 
-        .search-box {
-            width: 300px;
-
-            .input-holder {
-                position: relative;
-                width: 300px;
-                height: 35px;
-                border: 1px solid #dddddd;
-                border-radius: 3px;
-                input {
-                    height: 100%;
-                    width: 300px;
-                    border: none;
-                    outline: none;
-                    margin: 0;
-                    padding: 0 0 0 10px;
-                    box-shadow: none;
-                    width: calc(300px - 30px);
-                }
-
-                button {
-                    border: none;
-                    outline: none;
-                    box-shadow: none;
-                    position: absolute;
-                    width: 30px;
-                    top: 2px;
-                    right: 0px;
-                    cursor: pointer;
-                }
-            }
-        }
+        
     }
 }
 /* navigation bar end */
@@ -195,6 +198,8 @@ header {
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
+
+    
     .row {
         padding-left: 0;
     }
@@ -220,6 +225,7 @@ header {
                 a {
                     &:hover {
                         text-decoration: underline;
+                        
                     }
                 }
             }

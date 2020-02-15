@@ -12,7 +12,14 @@ session_start();
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
+                <form class="search-box form-inline my-2 my-lg-0 ml-auto" role="search">
+                    <div class="input-holder">
+                        <input type="text" name="search" placeholder="Search">
+                        <button type="submit" name="search-submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </div>
+                </form>
                 <ul class="navbar-nav ml-auto">
+
                     <li class="nav-item active">
                         <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
                     </li>
@@ -50,12 +57,7 @@ session_start();
                             </script>
                         </li>
                     <?php } ?>
-                    <form action="" method="post" class="search-box form-inline my-2 my-lg-0">
-                        <div class="input-holder">
-                            <input type="text" name="search" placeholder="Search">
-                            <button type="submit" name="search-submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-                        </div>
-                    </form>
+
                 </ul>
             </div>
         </nav>

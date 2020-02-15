@@ -29,8 +29,14 @@ if (isset($_POST['login-submit'])) {
                 $_SESSION['email'] = $row['user_email'];
                 $_SESSION['firstname'] = $row['user_firstname'];
                 $_SESSION['lastname'] = $row['user_lastname'];
-                header("Location: profile.php?login=success");
-                exit();
+                if (isset($_SESSION['url'])) {
+                    $url = $_SESSION['url'];
+                    header("Location: $url");
+                    exit();
+                } else {
+                    header("Location: profile.php?login=success");
+                    exit();
+                }
             }
         } else {
             $message = "<p class='error'>Password or Email Incorrect!</p>";

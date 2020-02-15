@@ -7,7 +7,7 @@ session_start();
 <header class="navbar-expand-md navbar-light bg-light" style="background: #fff !important">
     <div class="max-width">
         <nav class="navbar navbar-default">
-            <a class="navbar-brand" href="#">IOS DEV</a>
+            <a class="navbar-brand" href="index.php">IOS DEV</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

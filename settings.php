@@ -12,7 +12,7 @@ if (!isset($_SESSION['userid'])) {
     <ul class="row">
         <h1 class='title big ml-auto mr-auto'>Account Settings</h1>
         <li class='col-md-12 col-sm-12'>
-            <a href=''>
+            <a href='changepassword.php'>
                 <div class='blog-card'>
                     <div class='blog-body'>
                         <h1 class='title small'>

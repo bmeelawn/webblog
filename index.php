@@ -1,7 +1,9 @@
 <?php
+$title = "Homepage";
 include 'includes/db.inc.php';
 include 'includes/header.inc.php';
 include 'includes/navbar.inc.php';
+
 ?>
 <!-- Recent post -->
 <main class="posts max-width gutterY bottom-too">
@@ -9,7 +11,7 @@ include 'includes/navbar.inc.php';
     <ul class="row">
         <?php
         if (isset($_SESSION['userid'])) { ?>
-            <a href="" class='btn ml-auto mr-auto'>Create new post</a>
+            <a href="createpost.php" class='btn ml-auto mr-auto'>Create new post</a>
         <?php } ?>
 
         <li class="col-md-12 col-sm-12">

@@ -1,4 +1,5 @@
 <?php
+$title = "";
 include 'includes/header.inc.php';
 include 'includes/navbar.inc.php';
 if (!isset($_SESSION['userid'])) {
@@ -33,6 +34,7 @@ if (!isset($_SESSION['userid'])) {
 <!-- user posts -->
 <main class="posts max-width">
     <ul class="row">
+        <a href="createpost.php" class='btn ml-auto mr-auto'>Create new post</a>
         <li class="col-md-12 col-sm-12">
             <a href="">
                 <div class="blog-card">

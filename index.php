@@ -5,7 +5,13 @@ include 'includes/navbar.inc.php';
 ?>
 <!-- Recent post -->
 <main class="posts max-width gutterY bottom-too">
+
     <ul class="row">
+        <?php
+        if (isset($_SESSION['userid'])) { ?>
+            <a href="" class='btn ml-auto mr-auto'>Create new post</a>
+        <?php } ?>
+
         <li class="col-md-12 col-sm-12">
             <a href="">
                 <div class="blog-card">

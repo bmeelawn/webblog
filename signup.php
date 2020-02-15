@@ -1,4 +1,5 @@
 <?php
+$title = "Signup";
 include 'includes/header.inc.php';
 include 'includes/navbar.inc.php';
 include 'includes/signup.inc.php';
@@ -14,8 +15,8 @@ if (isset($_SESSION['userid'])) {
             <h1 class="title big w-600">Signup</h1>
 
             <?php if (isset($_POST['signup-submit'])) {
-                    echo $message;
-                } 
+                echo $message;
+            }
             ?>
 
             <form action="" method="post">

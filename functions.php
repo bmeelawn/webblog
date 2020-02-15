@@ -21,18 +21,18 @@ function getAllPosts()
                 <a href=''>
                     <div class='blog-card'>
                         <div class='blog-body'>
-                            <h1 class='title small w-400 text-color text-dim text-upper'>
+                            <h5 class='title x-small w-400 text-color text-dim text-upper'>
                                 $post_category
-                            </h1>
+                            </h5>
                             <h1 class='title big w-600'>
                                 $post_title
                             </h1>
-                            <p class='para p-x-small w-400 text-color text-dim'>
+                            <h5 class='paragraph p-x-small w-400 text-color text-dim'>
                                 $new_trim_post
-                            </p>
+                            </h5>
                             <div class='user-details'>
                                 <a href='' class='para p-x-small w-400 text-color text-default text-capitalize'>$post_author</a>
-                                <p class='para p-x-small w-400 text-color text-dim'>$date_month $date_day, $date_year</p>
+                                <h5 class='para p-x-small w-400 text-color text-dim'>$date_month $date_day, $date_year</h5>
                             </div>
                             <hr>
                         </div>
@@ -81,18 +81,19 @@ function getUserPosts()
                 <a href=''>
                     <div class='blog-card'>
                         <div class='blog-body'>
-                            <h1 class='title small w-400 text-color text-dim text-upper'>
+                            <div class='blog-body'>
+                            <h5 class='title x-small w-400 text-color text-dim text-upper'>
                                 $post_category
-                            </h1>
+                            </h5>
                             <h1 class='title big w-600'>
                                 $post_title
                             </h1>
-                            <p class='para p-x-small w-400 text-color text-dim'>
+                            <h5 class='paragraph p-x-small w-400 text-color text-dim'>
                                 $new_trim_post
-                            </p>
+                            </h5>
                             <div class='user-details'>
                                 <a href='' class='para p-x-small w-400 text-color text-default text-capitalize'>$post_author</a>
-                                <p class='para p-x-small w-400 text-color text-dim'>$date_month $date_day, $date_year</p>
+                                <h5 class='para p-x-small w-400 text-color text-dim'>$date_month $date_day, $date_year</h5>
                             </div>
                             <hr>
                         </div>

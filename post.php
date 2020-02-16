@@ -3,6 +3,7 @@ $title = "Post";
 include 'includes/header.inc.php';
 include 'includes/navbar.inc.php';
 include 'functions.php';
+include 'includes/comment.inc.php';
 ?>
 
 <main class="posts max-width gutterY bottom-too">
@@ -20,23 +21,22 @@ include 'functions.php';
                             <div class="panel-heading">
                                 Comments
                             </div>
+                            <?php
+                            if (isset($_POST['cmt-submit'])) {
+                                echo $message;
+                            }
+                            ?>
                             <div class="panel-body">
-                                <textarea class="form-control" placeholder="write a comment..." rows="3"></textarea>
-                                <br>
-                                <button type="button" class="btn btn-info pull-right">Post</button>
+                                <form action="" method="post">
+                                    <textarea class="form-control" placeholder="write a comment..." rows="3" name='cmt'></textarea>
+                                    <br>
+                                    <button type="submit" class="btn btn-info pull-right" name='cmt-submit'>Post</button>
+                                </form>
+
                                 <div class="clearfix"></div>
                                 <hr>
                                 <ul class="media-list">
-                                    <li class="media">
-                                        <div class="media-body">
-                                            <strong class="text-success">@MartinoMont</strong>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                Lorem ipsum dolor sit amet, <a href="#">#consecteturadipiscing </a>.
-                                            </p>
-                                        </div>
-                                    </li>
-
+                                    <?= getComment($post_id) ?>
                                 </ul>
                             </div>
                         </div>

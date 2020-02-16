@@ -133,7 +133,6 @@ function getPostById($post_id)
         $date_month = date('M', strtotime($row['created_at']));
         echo "
             <li class='col-md-12 col-sm-12'>
-                <a href=''>
                     <div class='blog-card'>
                         <div class='blog-body'>
                             <div class='blog-body'>
@@ -153,7 +152,6 @@ function getPostById($post_id)
                             <hr>
                         </div>
                     </div>
-                </a>
             </li>
               ";
     }

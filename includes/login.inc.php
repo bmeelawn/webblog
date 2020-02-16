@@ -12,7 +12,7 @@ if (isset($_POST['login-submit'])) {
     if (empty($login_username) || empty($login_password)) {
         $message = "<p class='error'>Fill in all required!</p>";
     } else {
-        $query = "SELECT * FROM users where username = '$login_username' OR user_email = '$login_username'";
+        $query = "SELECT * FROM users where BINARY username = '$login_username' OR BINARY user_email = '$login_username'";
         $all_users_query = mysqli_query($conn, $query);
 
         if ($row = mysqli_fetch_assoc($all_users_query)) {

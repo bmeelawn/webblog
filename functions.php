@@ -158,3 +158,25 @@ function getPostById($post_id)
               ";
     }
 }
+
+
+function getComment($post_id)
+{
+    global $conn;
+    $sql = "SELECT * FROM comments WHERE comment_post_id = $post_id";
+    $res = mysqli_query($conn, $sql);
+    while ($row = mysqli_fetch_assoc($res)) {
+        $username = $row['comment_username'];
+        $comment = $row['comment_text'];
+        echo "
+        <li class='media'>
+            <div class='media-body'>
+                <strong class='text-success'>@$username</strong>
+                <p>
+                $comment
+                </p>
+            </div>
+            
+        </li><hr>";
+    }
+}

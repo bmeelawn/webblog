@@ -25,7 +25,7 @@ if (!isset($_SESSION['userid'])) {
         </li>
 
         <li class='col-md-12 col-sm-12'>
-            <a href=''>
+            <a href='changeusername.php'>
                 <div class='blog-card'>
                     <div class='blog-body'>
                         <h1 class='title small'>
@@ -38,7 +38,7 @@ if (!isset($_SESSION['userid'])) {
         </li>
 
         <li class='col-md-12 col-sm-12'>
-            <a href=''>
+            <a href='changeemail.php'>
                 <div class='blog-card'>
                     <div class='blog-body'>
                         <h1 class='title small'>
@@ -51,7 +51,7 @@ if (!isset($_SESSION['userid'])) {
         </li>
 
         <li class='col-md-12 col-sm-12'>
-            <a href=''>
+            <a href='includes/deleteaccount.inc.php'>
                 <div class='blog-card'>
                     <div class='blog-body'>
                         <h1 class='title small'>

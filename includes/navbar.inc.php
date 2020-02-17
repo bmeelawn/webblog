@@ -56,14 +56,6 @@ session_start();
                                 <a class="dropdown-item" href="settings.php">Settings</a>
                                 <a class="dropdown-item" href="includes/logout.inc.php">Logout</a>
                             </div>
-                            <!-- dropdown menu js -->
-                            <script>
-                                let dropdown = document.querySelector('.dropdown');
-                                let dropdownMenu = document.querySelector('.dropdown-menu');
-                                dropdown.onclick = function() {
-                                    dropdownMenu.classList.toggle('show');
-                                }
-                            </script>
                         </li>
                     <?php } ?>
 

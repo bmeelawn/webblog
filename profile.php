@@ -7,6 +7,8 @@ if (!isset($_SESSION['userid'])) {
     exit();
 }
 include 'functions.php';
+
+
 ?>
 
 <main class="posts max-width gutterY">

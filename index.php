@@ -11,6 +11,7 @@ include 'functions.php';
     <ul class="row">
         <?= getAllPosts(); ?>
     </ul>
+
 </main>
 
 <?php

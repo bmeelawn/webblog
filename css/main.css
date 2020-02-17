@@ -203,11 +203,22 @@ header {
   line-height: 30px;
 }
 
+.edit {
+  position: absolute;
+  top: 25px;
+  right: 39px;
+}
+
+.edit-drop {
+  cursor: pointer;
+}
+
 /* posts */
 .posts {
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
+  position: relative;
 }
 
 .posts .row {
@@ -309,5 +320,13 @@ input {
   padding: 0 0 0 10px;
   outline: none;
   height: 40px;
+}
+
+.avatar-pic {
+  width: 150px;
+}
+
+.guuterX {
+  margin-left: 10px;
 }
 /*# sourceMappingURL=main.css.map */

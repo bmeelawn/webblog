@@ -203,11 +203,22 @@ header {
   line-height: 30px;
 }
 
+.edit {
+  position: absolute;
+  top: 25px;
+  right: 39px;
+}
+
+.edit-drop {
+  cursor: pointer;
+}
+
 /* posts */
 .posts {
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
+  position: relative;
 }
 
 .posts .row {

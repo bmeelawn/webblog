@@ -228,14 +228,14 @@ function editPost($post_id)
     global $conn;
     $sql = "SELECT * FROM posts WHERE post_id = $post_id";
     $res = mysqli_query($conn, $sql);
+
     if ($row = mysqli_fetch_assoc($res)) {
         $user_id = $_SESSION['userid'];
         if ($row['user_id'] === $user_id) {
             $title = $row['title'];
             $body = $row['body'];
             $cat = $row['category'];
-            echo " <div class='col-sm-12 col-md-12'>
-            <h1 class='title big w-600'>Edit post</h1>
+            echo " 
             <form action='' method='post'>
                 <input type='text' name='title' placeholder='Title' value='$title'>
                 <input type='text' name='categories' placeholder='Categories' value='$cat'>
@@ -244,7 +244,7 @@ function editPost($post_id)
                     <button type='submit' name='updatepost-submit' class='btn'>Update Post</button>
                 </div>
             </form>
-        </div>";
+        ";
         } else {
             echo "You can't edit the post";
         }

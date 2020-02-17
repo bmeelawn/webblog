@@ -160,7 +160,7 @@ function getSearchPostsUsr()
     global $conn;
     if (isset($_POST['search-submit'])) {
         $search_value = $_POST['search'];
-        $query = "SELECT * FROM posts WHERE user_id=".$_SESSION['userid']." AND title like '%$search_value%' OR body like '%$search_value%'";
+        $query = "SELECT * FROM posts WHERE user_id=".$_SESSION['userid']." AND title like '%$search_value%' OR author like '%$search_value%'";
         $search_query = mysqli_query($conn, $query);
     
     if (!$search_query) {

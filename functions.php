@@ -87,30 +87,30 @@ function getAllPosts()
     }
 }
 
-function getSearchPosts() 
+function getSearchPosts()
 {
     global $conn;
     if (isset($_POST['search-submit'])) {
         $search_value = $_POST['search'];
         $query = "SELECT * FROM posts WHERE author like '%$search_value%' OR title like '%$search_value%'";
         $search_query = mysqli_query($conn, $query);
-    
+
         if (!$search_query) {
             die("QUERY FAILED. " . mysqli_error($conn));
         } else {
-    if (mysqli_num_rows($search_query) > 0) {
-        while ($row = mysqli_fetch_assoc($search_query)) {
-            $post_id = $row['post_id'];
-            $post_category = $row['category'];
-            $post_title = $row['title'];
-            $post_body = $row['body'];
-            $new_trim_post = substr($post_body, 0, 137);
-            $post_author = $row['author'];
-            $date_year = date('yy', strtotime($row['created_at']));
-            $date_day = date('d', strtotime($row['created_at']));
-            $date_month = date('M', strtotime($row['created_at']));
+            if (mysqli_num_rows($search_query) > 0) {
+                while ($row = mysqli_fetch_assoc($search_query)) {
+                    $post_id = $row['post_id'];
+                    $post_category = $row['category'];
+                    $post_title = $row['title'];
+                    $post_body = $row['body'];
+                    $new_trim_post = substr($post_body, 0, 137);
+                    $post_author = $row['author'];
+                    $date_year = date('yy', strtotime($row['created_at']));
+                    $date_day = date('d', strtotime($row['created_at']));
+                    $date_month = date('M', strtotime($row['created_at']));
 
-            echo "
+                    echo "
             <li class='col-md-12 col-sm-12'>
                 <a href='post.php?id=$post_id'>
                     <div class='blog-card'>
@@ -134,9 +134,9 @@ function getSearchPosts()
                 </a>
             </li>
               ";
-        }
-    } else {
-        echo "
+                }
+            } else {
+                echo "
         <li class='col-md-12 col-sm-12'>
             <a href=''>
                 <div class='blog-card'>
@@ -150,35 +150,35 @@ function getSearchPosts()
             </a>
         </li>
         ";
-    }
+            }
         }
     }
 }
 
-function getSearchPostsUsr() 
+function getSearchPostsUsr()
 {
     global $conn;
     if (isset($_POST['search-submit'])) {
         $search_value = $_POST['search'];
-        $query = "SELECT * FROM posts WHERE user_id=".$_SESSION['userid']." AND title like '%$search_value%' OR body like '%$search_value%'";
+        $query = "SELECT * FROM posts WHERE user_id=" . $_SESSION['userid'] . " AND title like '%$search_value%' OR body like '%$search_value%'";
         $search_query = mysqli_query($conn, $query);
-    
-    if (!$search_query) {
-        die("QUERY FAILED. " . mysqli_error($conn));
-    } else {
-    if (mysqli_num_rows($search_query) > 0) {
-        while ($row = mysqli_fetch_assoc($search_query)) {
-            $post_id = $row['post_id'];
-            $post_category = $row['category'];
-            $post_title = $row['title'];
-            $post_body = $row['body'];
-            $new_trim_post = substr($post_body, 0, 137);
-            $post_author = $row['author'];
-            $date_year = date('yy', strtotime($row['created_at']));
-            $date_day = date('d', strtotime($row['created_at']));
-            $date_month = date('M', strtotime($row['created_at']));
 
-            echo "
+        if (!$search_query) {
+            die("QUERY FAILED. " . mysqli_error($conn));
+        } else {
+            if (mysqli_num_rows($search_query) > 0) {
+                while ($row = mysqli_fetch_assoc($search_query)) {
+                    $post_id = $row['post_id'];
+                    $post_category = $row['category'];
+                    $post_title = $row['title'];
+                    $post_body = $row['body'];
+                    $new_trim_post = substr($post_body, 0, 137);
+                    $post_author = $row['author'];
+                    $date_year = date('yy', strtotime($row['created_at']));
+                    $date_day = date('d', strtotime($row['created_at']));
+                    $date_month = date('M', strtotime($row['created_at']));
+
+                    echo "
             <li class='col-md-12 col-sm-12'>
                 <a href='post.php?id=$post_id'>
                     <div class='blog-card'>
@@ -202,9 +202,9 @@ function getSearchPostsUsr()
                 </a>
             </li>
             ";
-        }
-    } else {
-        echo "
+                }
+            } else {
+                echo "
         <li class='col-md-12 col-sm-12'>
             <a href=''>
                 <div class='blog-card'>
@@ -218,12 +218,12 @@ function getSearchPostsUsr()
             </a>
         </li>
         ";
-    }
+            }
         }
     }
 }
 
-function getUserPosts() 
+function getUserPosts()
 {
     global $conn;
     $userid = $_SESSION['userid'];
@@ -270,8 +270,8 @@ function getUserPosts()
                 </a>
                 <div class='ml-auto edit'>
                     <div class='dropdown'>
-                        <div class='edit-drop'><svg class='svgIcon-use' width='25' height='25'><path d='M5 12.5c0 .552.195 1.023.586 1.414.39.39.862.586 1.414.586.552 0 1.023-.195 1.414-.586.39-.39.586-.862.586-1.414 0-.552-.195-1.023-.586-1.414A1.927 1.927 0 0 0 7 10.5c-.552 0-1.023.195-1.414.586-.39.39-.586.862-.586 1.414zm5.617 0c0 .552.196 1.023.586 1.414.391.39.863.586 1.414.586.552 0 1.023-.195 1.414-.586.39-.39.586-.862.586-1.414 0-.552-.195-1.023-.586-1.414a1.927 1.927 0 0 0-1.414-.586c-.551 0-1.023.195-1.414.586-.39.39-.586.862-.586 1.414zm5.6 0c0 .552.195 1.023.586 1.414.39.39.868.586 1.432.586.551 0 1.023-.195 1.413-.586.391-.39.587-.862.587-1.414 0-.552-.196-1.023-.587-1.414a1.927 1.927 0 0 0-1.413-.586c-.565 0-1.042.195-1.432.586-.39.39-.586.862-.587 1.414z' fill-rule='evenodd'></path></svg></div>
-                        <div class='dropdown-menu' id='edit-drop-menu'>
+                        <div class='edit-drop' data-toggle='dropdown'><svg class='svgIcon-use' width='25' height='25'><path d='M5 12.5c0 .552.195 1.023.586 1.414.39.39.862.586 1.414.586.552 0 1.023-.195 1.414-.586.39-.39.586-.862.586-1.414 0-.552-.195-1.023-.586-1.414A1.927 1.927 0 0 0 7 10.5c-.552 0-1.023.195-1.414.586-.39.39-.586.862-.586 1.414zm5.617 0c0 .552.196 1.023.586 1.414.391.39.863.586 1.414.586.552 0 1.023-.195 1.414-.586.39-.39.586-.862.586-1.414 0-.552-.195-1.023-.586-1.414a1.927 1.927 0 0 0-1.414-.586c-.551 0-1.023.195-1.414.586-.39.39-.586.862-.586 1.414zm5.6 0c0 .552.195 1.023.586 1.414.39.39.868.586 1.432.586.551 0 1.023-.195 1.413-.586.391-.39.587-.862.587-1.414 0-.552-.196-1.023-.587-1.414a1.927 1.927 0 0 0-1.413-.586c-.565 0-1.042.195-1.432.586-.39.39-.586.862-.587 1.414z' fill-rule='evenodd'></path></svg></div>
+                        <div class='dropdown-menu'>
                         <a class='dropdown-item' href='edit.php?id=$post_id'>Edit</a>
                         <a class='dropdown-item text-danger' href='includes/deletepost.inc.php?id=$post_id'>Delete</a>
                     </div>

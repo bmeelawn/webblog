@@ -2,6 +2,10 @@
 
 include 'includes/header.inc.php';
 include 'includes/navbar.inc.php';
+if (!isset($_SESSION['userid'])) {
+    header("Location: login.php?msg=loginfirst");
+    exit();
+}
 include 'includes/changename.inc.php';
 
 ?>

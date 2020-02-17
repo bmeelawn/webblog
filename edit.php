@@ -3,6 +3,10 @@
 $title = 'edit post';
 include 'includes/header.inc.php';
 include 'includes/navbar.inc.php';
+if (!isset($_SESSION['userid'])) {
+    header("Location: login.php?msg=loginfirst");
+    exit();
+}
 include 'functions.php';
 include 'includes/editpost.inc.php';
 ?>

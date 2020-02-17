@@ -12,12 +12,21 @@ session_start();
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <form class="search-box form-inline my-2 my-lg-0 ml-auto" role="search">
+            <?php if (!isset($_GET['username'])) { ?>
+                <form class="search-box form-inline my-2 my-lg-0 ml-auto" action="search.php" role="search" method="post">
                     <div class="input-holder">
                         <input type="text" name="search" placeholder="Search">
                         <button type="submit" name="search-submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                     </div>
                 </form>
+            <?php } else { ?>
+                <form class="search-box form-inline my-2 my-lg-0 ml-auto" action="userpostssearch.php?username=<?=$_SESSION['username']?>" role="search" method="post">
+                    <div class="input-holder">
+                        <input type="text" name="search" placeholder="Search">
+                        <button type="submit" name="search-submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </div>
+                </form>
+            <?php } ?>
                 <ul class="navbar-nav ml-auto">
 
                     <li class="nav-item active">

@@ -384,3 +384,58 @@ function editPost($post_id)
         }
     }
 }
+
+function getUserImage()
+{
+    global $conn;
+    if (isset($_POST['profile-submit'])) { // insert image in database
+        $user_id = $_SESSION['userid'];
+        $img_name = "UserId" . $user_id . $_FILES['myfile']['name'];
+        $img_tmp = $_FILES['myfile']['tmp_name'];       // get image name
+        $ext = pathinfo($img_name, PATHINFO_EXTENSION); // get the image extension
+        $allowed_extensions = array('png', 'jpg', 'jpeg', 'gif'); // allowed extensions for image
+
+        if (!in_array($ext, $allowed_extensions)) { // validation for allowed extensions
+            echo "<script>alert('Invalid format. Only jpg / jpeg/ png /gif format allowed');</script>";
+        } else {
+            move_uploaded_file($img_tmp, "images/$img_name"); // move uploaded file
+            $sql = "SELECT * FROM images WHERE user_id = ".$_SESSION['userid']."";
+            $res = mysqli_query($conn, $sql);
+
+            if (!$res) {
+                die ("QUERY FAILED." . mysqli_error($conn));
+            }            
+            if  (mysqli_num_rows($res)>0) {
+                $row = mysqli_fetch_assoc($res);
+                if (file_exists("images/".$row['image']."")){ // check for file exists
+                    unlink("images/".$row['image'].""); //remove the file
+                }
+
+                $query = "UPDATE images SET image='$img_name' WHERE user_id= ".$_SESSION['userid']."";
+                $update_query = mysqli_query($conn, $query);
+                if (!$update_query) {
+                    die ("QUERY FAILED." . mysqli_error($conn));
+                }
+            } else {
+                $query = "INSERT INTO images(user_id, image) VALUES ($user_id, '$img_name')";
+                $insert_query = mysqli_query($conn, $query);
+                if (!$insert_query) {
+                    die ("QUERY FAILED." . mysqli_error($conn));
+                }
+            }
+            
+     }
+}
+    // Display profile image
+    $sql = "SELECT * FROM images WHERE user_id = ".$_SESSION['userid']."";
+    $res = mysqli_query($conn, $sql);
+
+    if (!$res) {
+        die ("QUERY FAILED." . mysqli_error($conn));
+    }
+    if  ($row=mysqli_fetch_assoc($res)) {  
+        echo "<img src='images/".$row['image']."' image' class='user-profile'>";
+    } else {
+        echo "<img src='images/profile.jpeg' alt='profile image' class='user-profile'>";
+    }
+}

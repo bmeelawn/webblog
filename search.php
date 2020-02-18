@@ -3,6 +3,7 @@ $title = "Searchpage";
 include 'includes/db.inc.php';
 include 'includes/header.inc.php';
 include 'includes/navbar.inc.php';
+header("Cache-Control: no cache");
 include 'functions.php';
 
 ?>

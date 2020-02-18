@@ -27,9 +27,9 @@ include 'includes/changename.inc.php';
             </div>
             <div class="col-sm-12 col-md-12 gutterY">
                 <h1 class="title big w-600">Upload Profile Image</h1>
-                <form action="" method="post">
+                <form action="profile.php?change=profile" method="post" enctype="multipart/form-data">
                     <input type="file" id="myfile" name="myfile" multiple>
-                    <button type="submit" class='btn' name='changename-submit'>Upload</button>
+                    <button type="submit" class='btn' name='profile-submit'>Upload</button>
                 </form>
             </div>
         </section>

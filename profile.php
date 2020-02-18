@@ -2,6 +2,7 @@
 $title = "";
 include 'includes/header.inc.php';
 include 'includes/navbar.inc.php';
+header("Cache-Control: no-cache");
 if (!isset($_SESSION['userid'])) {
     header("Location: login.php?msg=loginfirst");
     exit();
@@ -26,7 +27,9 @@ include 'functions.php';
                         <a href="editprofile.php" class="title small w-400 text-color text-default" style="border: 1px solid #000; padding: 1px 10px; border-radius: 5px">Edit profile</a>
                     </div>
                     <div class="user-profile col-md-3 col-sm-12">
-                        <img src="images/profile.jpeg" alt="profile image" class="user-profile">
+                    <?php
+                    echo getUserImage();
+                    ?>   
                     </div>
                 </div>
             </div>
